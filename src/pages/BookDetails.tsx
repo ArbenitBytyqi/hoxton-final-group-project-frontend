@@ -1,20 +1,22 @@
+import "./BookDetails.css";
 export function BookDetails() {
   return (
-    <section className="movie-detail main-wrapper">
-      <img src="./book-cover.jpg" alt="Book image" />
-      <div className="movie-detail__side">
+    <section className="book-detail main-wrapper">
+      <img src="./assets/bookcover.jpg" alt="Book image" />
+      <div className="book-detail__side">
         <h3></h3>
         <h2>Book Title</h2>
+        <h4>Category:</h4>
         <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-          Necessitatibus eum sunt et odio ipsum pariatur modi iusto officia
-          dignissimos similique doloremque eligendi fugit, libero reprehenderit.
-          Fuga, cupiditate! Sint, earum repudiandae.
+          (Description) Lorem ipsum dolor, sit amet consectetur adipisicing
+          elit. Necessitatibus eum sunt et odio ipsum pariatur modi iusto
+          officia dignissimos similique doloremque eligendi fugit, libero
+          reprehenderit. Fuga, cupiditate! Sint, earum repudiandae.
         </p>
 
-        <button>Watch trailer</button>
+        <div></div>
 
-        <button>Add to Cart</button>
+        <button className="cart-button">Add to Cart</button>
       </div>
     </section>
   );
