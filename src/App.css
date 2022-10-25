@@ -1,7 +1,7 @@
 :root {
   --usualPadding: 30px;
   --theGreyColor: rgb(240, 240, 240);
-  --mainColor: rgb(216,86,91);
+  --mainColor: rgb(216, 86, 91);
 }
 
 * {
@@ -12,25 +12,24 @@
 
 /* general */
 
-button{
+button {
   background-color: var(--mainColor);
   color: white;
   border: none;
   height: 35px;
   border-radius: 2px;
   font-size: 17px;
-  padding:5px;
+  padding: 5px;
 }
 
-button:hover{
+button:hover {
   background-color: rgb(197, 74, 78);
 }
 
-a{
+a {
   text-decoration: none;
   color: black;
 }
-
 
 input {
   background-color: var(--theGreyColor);
@@ -40,8 +39,12 @@ input {
   outline-color: var(--mainColor);
 }
 
-input:focus{
+input:focus {
   background-color: white;
+}
+
+ul {
+  list-style: none;
 }
 
 /* pages */
@@ -74,14 +77,13 @@ header {
   font-size: 18px;
 }
 
-header p{
+header p {
   display: inline-block;
   position: relative;
 }
 
-
-header p:after{
-  content: '';
+header p:after {
+  content: "";
   position: absolute;
   width: 100%;
   transform: scaleX(0);
@@ -93,18 +95,18 @@ header p:after{
   transition: transform 0.25s ease-out;
 }
 
-header p:hover:after{
+header p:hover:after {
   transform: scaleX(1);
   transform-origin: bottom left;
 }
 
-.my-account{
+.my-account {
   display: grid;
   grid-auto-flow: column;
-  gap:5px;
+  gap: 5px;
 }
 
-.select{
+.select {
   border: none;
 }
 
@@ -116,7 +118,6 @@ main {
   padding: var(--usualPadding);
   overflow-x: hidden;
 }
-
 
 /* homepage */
 .home {
@@ -134,22 +135,20 @@ main {
   border-radius: 25px;
 }
 
-
 .titles {
   width: 95vw;
   display: grid;
   grid-template-columns: repeat(4, 300px);
   justify-items: center;
-  gap:30px;
+  gap: 30px;
 }
-
 
 .list-book {
   display: grid;
   width: 250px;
   padding: var(--usualPadding);
   gap: 10px;
-  justify-content: center ;
+  justify-content: center;
   border: 1px solid rgb(207, 207, 207);
 }
 
@@ -160,28 +159,56 @@ main {
   border-radius: 5px;
 }
 
-.author{
-  color:rgb(156, 53, 53);
+.author {
+  color: rgb(156, 53, 53);
   font-size: 17px;
   font-weight: 600;
 }
 
 /* login */
-.login{
+.login {
   display: grid;
   justify-content: center;
   align-content: center;
-  gap:30px;
+  gap: 30px;
   text-align: center;
 }
 
-.login input{
-  width:350px;
+.login input {
+  width: 350px;
   height: 40px;
   padding: 10px;
 }
 
+/* cart */
 
+.cart {
+  text-align: center;
+}
+
+.cart ul {
+  padding-top: 20px;
+  display: grid;
+  margin:30px;
+  gap: 20px;
+}
+
+.cart ul li {
+  border: 1px solid var(--theGreyColor);
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-between;
+  padding: 10px 60px;
+
+  align-items: center;
+  font-size: 25px;
+}
+
+.cart-book {
+  width: 100px;
+  height: 150px;
+  object-fit: cover;
+}
 
 /* footer */
 
