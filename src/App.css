@@ -52,6 +52,8 @@ gap: 40px;
   background-color: brown;
   width: 97vw;
   display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: repeat(4, 400px);
 }
 
 .home input{
@@ -63,6 +65,12 @@ gap: 40px;
   font-size: 18px;
   outline: none;
   padding: 30px;
+}
+
+.list-book img{
+  height: 250px; 
+  width: 150px;
+  object-fit: cover;
 }
 
 footer {
