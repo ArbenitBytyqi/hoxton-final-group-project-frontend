@@ -5,6 +5,7 @@ import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
 import { BookDetails } from "./pages/BookDetails";
 import { Homepage } from "./pages/Homepage";
+import { PageNotFound } from "./pages/PageNotFound";
 
 function App() {
   return (
