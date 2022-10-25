@@ -1,6 +1,7 @@
 :root {
   --usualPadding: 20px;
   --theGreyColor: rgb(240, 240, 240);
+  --mainColor: rgb(216,86,91);
 }
 
 * {
@@ -12,7 +13,7 @@
 /* general */
 
 button{
-  background-color: rgb(216,86,91);
+  background-color: var(--mainColor);
   color: white;
   border: none;
   height: 35px;
@@ -23,6 +24,7 @@ button{
 button:hover{
   background-color: rgb(197, 74, 78);
 }
+
 
 /* pages */
 
@@ -75,15 +77,19 @@ main {
   background-color: var(--theGreyColor);
   border: none;
   font-size: 18px;
-  outline: none;
   padding: 30px;
+  outline-color: var(--mainColor);
 }
 
-.newest-titles {
+.home input:focus{
+  background-color: white;
+}
+
+.titles {
   width: 95vw;
   display: grid;
   grid-template-columns: repeat(4, 300px);
-  justify-content: center;
+  justify-items: center;
   gap:30px;
 }
 
