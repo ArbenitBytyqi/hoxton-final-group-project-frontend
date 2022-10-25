@@ -19,6 +19,7 @@ button{
   height: 35px;
   border-radius: 2px;
   font-size: 17px;
+  padding:5px;
 }
 
 button:hover{
@@ -28,6 +29,19 @@ button:hover{
 a{
   text-decoration: none;
   color: black;
+}
+
+
+input {
+  background-color: var(--theGreyColor);
+  border: none;
+  font-size: 18px;
+  padding: 30px;
+  outline-color: var(--mainColor);
+}
+
+input:focus{
+  background-color: white;
 }
 
 /* pages */
@@ -41,6 +55,8 @@ a{
   grid-template-rows: 70px 1fr 100px;
   min-height: 100vh;
 }
+
+/* header */
 
 header {
   grid-area: header;
@@ -88,6 +104,12 @@ header p:hover:after{
   gap:5px;
 }
 
+.select{
+  border: none;
+}
+
+/* main */
+
 main {
   grid-area: main;
   display: grid;
@@ -110,16 +132,8 @@ main {
   width: 50%;
   height: 60px;
   border-radius: 25px;
-  background-color: var(--theGreyColor);
-  border: none;
-  font-size: 18px;
-  padding: 30px;
-  outline-color: var(--mainColor);
 }
 
-.home input:focus{
-  background-color: white;
-}
 
 .titles {
   width: 95vw;
@@ -151,6 +165,25 @@ main {
   font-size: 17px;
   font-weight: 600;
 }
+
+/* login */
+.login{
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  gap:30px;
+  text-align: center;
+}
+
+.login input{
+  width:350px;
+  height: 40px;
+  padding: 10px;
+}
+
+
+
+/* footer */
 
 footer {
   grid-area: footer;

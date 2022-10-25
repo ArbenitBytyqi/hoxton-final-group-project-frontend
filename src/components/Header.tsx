@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 export function Header() {
@@ -6,6 +7,8 @@ export function Header() {
       <Link to="/home">
         <h3>NAME OF LIBRARY</h3>
       </Link>
+      <div>
+      </div>
       <div className="my-account">
         <p>My account</p>
         <span className="material-symbols-outlined">account_circle</span>
