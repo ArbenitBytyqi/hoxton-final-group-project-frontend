@@ -25,6 +25,10 @@ button:hover{
   background-color: rgb(197, 74, 78);
 }
 
+a{
+  text-decoration: none;
+  color: black;
+}
 
 /* pages */
 
@@ -51,6 +55,37 @@ header {
   height: 70px;
   padding: var(--usualPadding);
   background-color: white;
+  font-size: 18px;
+}
+
+header p{
+  display: inline-block;
+  position: relative;
+}
+
+
+header p:after{
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--mainColor);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+header p:hover:after{
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.my-account{
+  display: grid;
+  grid-auto-flow: column;
+  gap:5px;
 }
 
 main {
