@@ -1,7 +1,7 @@
 export function BookDetails() {
   return (
     <section className="movie-detail main-wrapper">
-      <img src="./book-cover.jpg" alt="Book image" />
+      <img src="./assets/book-cover.jpg" alt="Book image" />
       <div className="movie-detail__side">
         <h3></h3>
         <h2>Book Title</h2>

@@ -9,6 +9,23 @@
   box-sizing: border-box;
 }
 
+/* general */
+
+button{
+  background-color: rgb(216,86,91);
+  color: white;
+  border: none;
+  height: 35px;
+  border-radius: 2px;
+  font-size: 17px;
+}
+
+button:hover{
+  background-color: rgb(197, 74, 78);
+}
+
+/* pages */
+
 .App {
   display: grid;
   grid-template-areas:
@@ -19,7 +36,7 @@
   min-height: 100vh;
 }
 
-header{
+header {
   grid-area: header;
   display: grid;
   grid-auto-flow: column;
@@ -27,9 +44,11 @@ header{
   align-items: center;
   box-shadow: rgba(149, 157, 165, 0.11) 0px 1px 40px;
   position: fixed;
+  top: 0;
   width: 100vw;
   height: 70px;
   padding: var(--usualPadding);
+  background-color: white;
 }
 
 main {
@@ -38,27 +57,20 @@ main {
   padding: var(--usualPadding);
 }
 
-/* home page */
-.home{
-display: grid;
-justify-items: center;
-align-items: flex-start;
-align-content: flex-start;
-padding-top: 50px;
-gap: 40px;
-}
 
-.newest-titles{
-  background-color: brown;
-  width: 97vw;
+/* homepage */
+.home {
   display: grid;
-  grid-auto-flow: column;
-  grid-template-columns: repeat(4, 400px);
+  justify-items: center;
+  align-items: flex-start;
+  align-content: flex-start;
+  padding-top: 50px;
+  gap: 50px;
 }
 
-.home input{
+.home input {
   width: 50%;
-  height:60px;
+  height: 60px;
   border-radius: 25px;
   background-color: var(--theGreyColor);
   border: none;
@@ -67,10 +79,35 @@ gap: 40px;
   padding: 30px;
 }
 
-.list-book img{
-  height: 250px; 
-  width: 150px;
+.newest-titles {
+  width: 95vw;
+  display: grid;
+  grid-template-columns: repeat(4, 300px);
+  justify-content: center;
+  gap:30px;
+}
+
+
+.list-book {
+  display: grid;
+  width: 250px;
+  padding: var(--usualPadding);
+  gap: 10px;
+  justify-content: center ;
+  border: 1px solid rgb(207, 207, 207);
+}
+
+.list-book img {
+  height: 280px;
+  width: 180px;
   object-fit: cover;
+  border-radius: 5px;
+}
+
+.author{
+  color:rgb(156, 53, 53);
+  font-size: 17px;
+  font-weight: 600;
 }
 
 footer {
@@ -78,5 +115,3 @@ footer {
   background-color: var(--theGreyColor);
   padding: var(--usualPadding);
 }
-
-
