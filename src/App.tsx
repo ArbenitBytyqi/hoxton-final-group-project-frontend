@@ -5,6 +5,7 @@ import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
 import { BookDetails } from "./pages/BookDetails";
 import { Homepage } from "./pages/Homepage";
+import { PageNotFound } from "./pages/PageNotFound";
 
 function App() {
   return (
@@ -12,13 +13,13 @@ function App() {
       <Header />
       <main>
         <Routes>
-      <Route index element={<Navigate to="/home" />} />
-      <Route path="/home" element={<Homepage/>}/>
-      <Route path="/home/:itemId" element={<BookDetails/>}/>
-      <Route path="*" element={<PageNotFound />} />
-      </Routes>
+          <Route index element={<Navigate to="/home" />} />
+          <Route path="/home" element={<Homepage />} />
+          <Route path="/bookdetails" element={<BookDetails />} />
+          <Route path="*" element={<PageNotFound />} />
+        </Routes>
       </main>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
