@@ -13,13 +13,13 @@ function App() {
       <Header />
       <main>
         <Routes>
-      <Route index element={<Navigate to="/home" />} />
-      <Route path="/home" element={<Homepage/>}/>
-      <Route path="/home/:itemId" element={<BookDetails/>}/>
-      <Route path="*" element={<PageNotFound />} />
-      </Routes>
+          <Route index element={<Navigate to="/home" />} />
+          <Route path="/home" element={<Homepage />} />
+          <Route path="/bookdetails" element={<BookDetails />} />
+          <Route path="*" element={<PageNotFound />} />
+        </Routes>
       </main>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
