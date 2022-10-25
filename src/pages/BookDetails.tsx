@@ -1,3 +1,2 @@
 export function BookDetails() {
-    return ();
-}
+    return ()
