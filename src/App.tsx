@@ -1,23 +1,21 @@
-import { useState } from 'react'
-import './App.css'
+import { useState } from "react";
+import "./App.css";
+import { Footer } from "./components/Footer";
+import { Header } from "./components/Header";
 
 function App() {
-
   return (
     <div className="App">
-      <header>
-      <h3>NAME OF LIBRARY</h3>
-      <h3>My account</h3>
-      </header>
+      <Header />
       <main>
-      <h2>main</h2>
+        <div className="home">
+        <input placeholder="search for a book"></input>
+        </div>
+        
       </main>
-      <footer>
-        <h2>footer </h2>
-      </footer>
-      
+      <Footer/>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
