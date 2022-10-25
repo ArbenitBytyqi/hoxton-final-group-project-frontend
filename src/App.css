@@ -16,14 +16,15 @@
     "footer";
   grid-template-rows: 70px 1fr 100px;
   min-height: 100vh;
+  
 }
 
-header {
+header{
+  grid-area: header;
   display: grid;
   grid-auto-flow: column;
   justify-content: space-between;
   align-items: center;
-  grid-area: header;
   box-shadow: rgba(149, 157, 165, 0.11) 0px 1px 40px;
   position: fixed;
   width: 100vw;
@@ -33,9 +34,27 @@ header {
 
 main {
   grid-area: main;
+  display: grid;
+  padding: var(--usualPadding);
+}
+
+/* home page */
+.home{
+display: grid;
+justify-items: center;
+align-items: flex-start;
+padding-top: 50px;
+}
+
+.home input{
+  width: 50%;
+  height:60px;
+  border-radius: 12px;
+
 }
 
 footer {
   grid-area: footer;
   background-color: rgb(240, 240, 240);
+  padding: var(--usualPadding);
 }
