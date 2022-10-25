@@ -14,8 +14,6 @@ export function BookDetails() {
           reprehenderit. Fuga, cupiditate! Sint, earum repudiandae.
         </p>
 
-        <div></div>
-
         <button className="cart-button">Add to Cart</button>
       </div>
     </section>
