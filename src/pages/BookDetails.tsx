@@ -1,4 +1,6 @@
+import { AiOutlineStar } from "react-icons/ai";
 import "./BookDetails.css";
+
 export function BookDetails() {
   return (
     <>
@@ -22,13 +24,9 @@ export function BookDetails() {
           </p>
           <h3 className="book-price">12.99$</h3>
           <h3 className="stock">In Stock</h3>
+
           <button className="cart-button">Add to Cart</button>
         </div>
-      </section>
-      <section className="reviews-section">
-        <h1>Reviews:</h1>
-        <h1 className="reviews-h1">test</h1>
-        <h1>test</h1>
       </section>
     </>
   );

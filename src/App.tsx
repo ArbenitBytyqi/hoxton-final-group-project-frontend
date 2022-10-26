@@ -8,6 +8,7 @@ import { Cart } from "./pages/Cart";
 import { Homepage } from "./pages/Homepage";
 import { LogIn } from "./pages/LogIn";
 import { PageNotFound } from "./pages/PageNotFound";
+import { Reviews } from "./pages/Reviews";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route index element={<Navigate to="/home" />} />
           <Route path="/home" element={<Homepage />} />
           <Route path="/bookdetails" element={<BookDetails />} />
+          <Route path="/reviews" element={<Reviews />} />
           <Route path="/login" element={<LogIn />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="*" element={<PageNotFound />} />
