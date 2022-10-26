@@ -1,25 +1,26 @@
-:root,
-::after {
-  --white: #fff;
-  --black: rgb(17, 24, 32);
-  --grey: #ccc;
-  --blue: #0064d3;
-}
-
 .book-detail {
     display: grid;
     margin: 0 auto;
-    column-gap: 2rem;
-    grid-template-columns: 4fr 6fr;
-    padding: 2rem;
-    height: 100%;
+    column-gap: 10rem;
+    grid-template-columns: 4fr 4.87fr;
+    padding: 0rem;
+    height: 50%;
   }
-  
-  .book-detail > img {
+
+  .book-detail__side {
+    position: relative;
+    display: grid;
+    align-content: start;
+    padding-left: 1rem;
+    border-left: 2px solid;
+    border-color: #c34c4c;
+  }
+
+  .book-image {
     align-self: flex-end;
     width: 400px;
     height: 600px;
-    margin-left: 200px;
+    margin-left: 300px;
   }
   
   .book-detail__side {
@@ -29,33 +30,76 @@
     align-content: start;
     padding-left: 1rem;
     border-left: 2px solid;
-    border-color: var(--grey);
+    border-color: #c34c4c;
   }
   
-  .book-detail__side h3 {
-    align-self: start;
-  }
-  
-  .book-detail__side h2 {
+  .book-title {
     margin: 1rem 0;
-    color: #0064d3;
+    color: #000000;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    font-size: 40px;
+  }
+
+  .author-name{
+    color: #c34c4c;
+    margin-top: 50px;
+    font-size: 25px;
+  }
+
+  .published-year{
+    margin: 1rem 0;
+    color: rgb(126, 124, 124);
+    margin-top: 15px;
+    font-size: 1.08rem;
   }
   
-  .book-detail__side p {
+  .category{
+    color: rgb(126, 124, 124);
+    font-size: 1.08rem;
+    margin-top: 5px;
+  }
+
+  .book-description {
+    color: #4c4c4c;
     max-width: 50%;
     max-height: 150ch;
     margin-top: 1rem;
   }
-  
-  .book-detail__side button {
-    max-width: 33%;
-    padding: 0.5rem;
-    border: 2px solid var(--black);
-    justify-self: start;
-    margin-top: 5rem;
+
+  .book-price{
+    font-size: 35px;
+    color: #4c4c4c;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .stock{
+    color:#4c4c4c;
   }
   
-  .book-detail__side button:hover {
-    background-color: var(--blue);
-    color: var(--white);
+  .cart-button {
+    height: 40px;
+    width: 250px;
+    padding: 0.5rem;
+    justify-self: start;
+    margin-top: 5rem;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+  }
+  
+  .cart-button:hover {
+    background-color: #c34c4cb7;
+    color: #4c4c4c;
+  }
+
+  .reviews-section{
+    border: 1px solid #000000;
+    justify-self: center;
+    margin-top: 50px;
+    padding: 1rem;
+  }
+
+  .reviews-h1{
+    
   }
