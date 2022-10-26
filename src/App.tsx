@@ -2,6 +2,7 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import "./App.css";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
+import { Admin } from "./pages/Admin";
 import { Author } from "./pages/Author";
 import { BookDetails } from "./pages/BookDetails";
 import { Cart } from "./pages/Cart";
@@ -18,6 +19,7 @@ function App() {
         <Routes>
           <Route index element={<Navigate to="/home" />} />
           <Route path="/home" element={<Homepage />} />
+          <Route path="/admin" element={<Admin/>} />
           <Route path="/bookdetails" element={<BookDetails />} />
           <Route path="/reviews" element={<Reviews />} />
           <Route path="/author/:itemId" element={<Author />} />

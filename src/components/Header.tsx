@@ -5,7 +5,7 @@ export function Header() {
   return (
     <header>
       <Link to="/home">
-        <h3>NAME OF LIBRARY</h3>
+        <img src="..\knowledge.png" className="logo"></img>
       </Link>
       <div>
       </div>

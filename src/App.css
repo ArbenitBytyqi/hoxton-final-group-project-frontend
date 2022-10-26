@@ -67,7 +67,8 @@ header {
   grid-auto-flow: column;
   justify-content: space-between;
   align-content: center;
-  box-shadow: rgba(149, 157, 165, 0.11) 0px 1px 40px;
+  align-items: center;
+  box-shadow: rgba(149, 157, 165, 0.11) 0px 7px 40px;
   position: fixed;
   top: 0;
   width: 100vw;
@@ -75,6 +76,12 @@ header {
   padding: var(--usualPadding);
   background-color: white;
   font-size: 18px;
+}
+
+.logo{
+width: 170px;
+height: 55px;
+object-fit: cover;
 }
 
 header p {
@@ -189,7 +196,7 @@ main {
 .cart ul {
   padding-top: 20px;
   display: grid;
-  margin:30px;
+  margin: 30px;
   gap: 20px;
 }
 
@@ -210,28 +217,25 @@ main {
   object-fit: cover;
 }
 
-
-
-
 /* Author page */
 
-.author-page{
+.author-page {
   display: grid;
   grid-auto-flow: column;
   justify-content: center;
   gap: 50px;
 }
 
-.author-pic{
+.author-pic {
   width: 400px;
   height: 500px;
   object-fit: cover;
 }
 
-.author-details{
+.author-details {
   display: grid;
   align-content: flex-start;
-  gap:15px;
+  gap: 15px;
   width: 600px;
   height: 500px;
   border: 1px solid var(--theGreyColor);
@@ -240,19 +244,79 @@ main {
   overflow-x: hidden;
 }
 
-.author-details ul{
+.author-details ul {
   display: grid;
   grid-template-columns: repeat(4, 120px);
-  gap:25px;
+  gap: 25px;
   justify-content: left;
 }
 
-.author-details h3{
-border-bottom: 1px solid var(--mainColor);
+.author-details h3 {
+  border-bottom: 1px solid var(--mainColor);
+}
+
+/* ADMIN PAGE */
+.admin-page {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: center;
+  gap: 200px;
+}
+.post-book {
+  margin-top: 20px;
+  width: 450px;
+  padding: 20px;
+  display: grid;
+  justify-content: center;
+  gap: 15px;
+  background-color: var(--theGreyColor);
+  height: 430px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+}
+.admin-page label {
+  display: grid;
+  gap: 2px;
+}
+
+.admin-page textarea {
+  width: 100%;
+  height: 150px;
+  padding: 12px 12px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  outline-color: green;
+  border-radius: 4px;
+  resize: none;
+  font-size: 14px;
+}
+
+.admin-page label input {
+  font-size: 14px;
+  width: 400px;
+  height: 30px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: white;
+  border-radius: 2px;
+  outline-color: green;
+  box-shadow: inset 0 0 1px 0px;
 }
 
 
+.post-author{
+  margin-top: 20px;
+  width: 450px;
+  padding: 20px;
+  display: grid;
+  justify-content: center;
+  align-content: flex-start;
+  gap: 15px;
+  background-color: var(--theGreyColor);
+  height: 430px;
 
+}
 
 /* footer */
 
