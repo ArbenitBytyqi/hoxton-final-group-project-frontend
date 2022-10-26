@@ -256,8 +256,4 @@ border-bottom: 1px solid var(--mainColor);
 
 /* footer */
 
-footer {
-  grid-area: footer;
-  background-color: var(--theGreyColor);
-  padding: var(--usualPadding);
-}
+

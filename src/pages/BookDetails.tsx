@@ -1,4 +1,3 @@
-import { AiOutlineStar } from "react-icons/ai";
 import "./BookDetails.css";
 
 export function BookDetails() {
