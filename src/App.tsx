@@ -1,8 +1,8 @@
-import { useState } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import "./App.css";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
+import { Author } from "./pages/Author";
 import { BookDetails } from "./pages/BookDetails";
 import { Cart } from "./pages/Cart";
 import { Homepage } from "./pages/Homepage";
@@ -18,6 +18,7 @@ function App() {
           <Route index element={<Navigate to="/home" />} />
           <Route path="/home" element={<Homepage />} />
           <Route path="/bookdetails" element={<BookDetails />} />
+          <Route path="/author/:itemId" element={<Author />} />
           <Route path="/login" element={<LogIn />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="*" element={<PageNotFound />} />

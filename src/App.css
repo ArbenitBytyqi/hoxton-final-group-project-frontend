@@ -210,6 +210,50 @@ main {
   object-fit: cover;
 }
 
+
+
+
+/* Author page */
+
+.author-page{
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: center;
+  gap: 50px;
+}
+
+.author-pic{
+  width: 400px;
+  height: 500px;
+  object-fit: cover;
+}
+
+.author-details{
+  display: grid;
+  align-content: flex-start;
+  gap:15px;
+  width: 600px;
+  height: 500px;
+  border: 1px solid var(--theGreyColor);
+  padding: var(--usualPadding);
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.author-details ul{
+  display: grid;
+  grid-template-columns: repeat(4, 120px);
+  gap:25px;
+  justify-content: left;
+}
+
+.author-details h3{
+border-bottom: 1px solid var(--mainColor);
+}
+
+
+
+
 /* footer */
 
 footer {
