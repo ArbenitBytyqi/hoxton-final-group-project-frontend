@@ -9,7 +9,6 @@
   }
 
   .book-detail__side {
-    position: relative;
     display: grid;
     align-content: start;
     padding-left: 1rem;
@@ -18,14 +17,15 @@
   }
 
   .book-image {
-    align-self: flex-end;
+    align-self: flex-start;
     width: 400px;
     height: 600px;
-    margin-left: 300px;
+    margin-left: 200px;
+    object-fit: cover;
   }
   
   .book-detail__side {
-    position: relative;
+ 
     display: grid;
     grid-template-rows: 20% auto;
     align-content: start;

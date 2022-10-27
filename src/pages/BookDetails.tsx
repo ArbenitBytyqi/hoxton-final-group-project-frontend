@@ -4,8 +4,7 @@ import "./BookDetails.css";
 export function BookDetails({ selectedBook, setSelectedAuthor }: any) {
   const navigate = useNavigate()
   return (
-    <>
-      <section className="book-detail main-wrapper">
+      <section className="book-detail">
         <img
           src={selectedBook.image}
           alt="Book image"
@@ -26,6 +25,5 @@ export function BookDetails({ selectedBook, setSelectedAuthor }: any) {
           <button className="cart-button" onClick={() => { navigate("/reviews") }}>Read Reviews</button>
         </div>
       </section>
-    </>
   );
 }
