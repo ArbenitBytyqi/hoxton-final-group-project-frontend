@@ -2,8 +2,7 @@ import "./BookDetails.css";
 
 export function BookDetails() {
   return (
-    <>
-      <section className="book-detail main-wrapper">
+      <section className="book-detail">
         <img
           src="./assets/bookcover.jpg"
           alt="Book image"
@@ -27,6 +26,5 @@ export function BookDetails() {
           <button className="cart-button">Add to Cart</button>
         </div>
       </section>
-    </>
   );
 }
