@@ -1,101 +1,46 @@
 import { Link } from "react-router-dom";
 
-export function Homepage() {
+export function Homepage({ allBooks, setSelectedBook }: any) {
+
+  const topRated: any = []
+
+  for (let book of allBooks) {
+    let sum = 0
+    for (const review of book.reviews) {
+      if (review.stars > 4.5) sum += review.stars
+      let average = sum / book.reviews.length
+      if (average > 3) topRated.push(book)
+    }
+  }
+
+  console.log(`topRated`, topRated)
   return (
     //hardcoded until fetched from the server
     <div className="home">
       <input placeholder="Search"></input>
-      <h1>Newest Titles</h1>
-      <div className="titles">
-        <div className="list-book">
-          <img src="https://m.media-amazon.com/images/I/71Le9HD+HuL.jpg"></img>
-          <h3>Letters to Milena</h3>
-          <p className="author">Franz Kafka</p>
-          <h3>XX Price</h3>
-          <Link to={`/bookdetails`}>
-            <button>See details</button>
-          </Link>
-        </div>
-        <div className="list-book">
-          <img src="https://m.media-amazon.com/images/I/71Le9HD+HuL.jpg"></img>
-          <h3>Letters to Milena</h3>
-          <p className="author">Franz Kafka</p>
-          <h3>XX Price</h3>
-          <button>See details</button>
-        </div>
-        <div className="list-book">
-          <img src="https://m.media-amazon.com/images/I/71Le9HD+HuL.jpg"></img>
-          <h3>Letters to Milena</h3>
-          <p className="author">Franz Kafka</p>
-          <h3>XX Price</h3>
-          <button>See details</button>
-        </div>
-        <div className="list-book">
-          <img src="https://m.media-amazon.com/images/I/71Le9HD+HuL.jpg"></img>
-          <h3>Letters to Milena</h3>
-          <p className="author">Franz Kafka</p>
-          <h3>XX Price</h3>
-          <button>See details</button>
-        </div>
-        <div className="list-book">
-          <img src="https://m.media-amazon.com/images/I/71Le9HD+HuL.jpg"></img>
-          <h3>Letters to Milena</h3>
-          <p className="author">Franz Kafka</p>
-          <h3>XX Price</h3>
-          <button>See details</button>
-        </div>
-        <div className="list-book">
-          <img src="https://m.media-amazon.com/images/I/71Le9HD+HuL.jpg"></img>
-          <h3>Letters to Milena</h3>
-          <p className="author">Franz Kafka</p>
-          <h3>XX Price</h3>
-          <button>See details</button>
-        </div>
-      </div>
       <h1>Top Rated</h1>
       <div className="titles">
-        <div className="list-book">
-          <img src="https://m.media-amazon.com/images/I/71Le9HD+HuL.jpg"></img>
-          <h3>Letters to Milena</h3>
+        {topRated.map(book => <div className="list-book">
+          <img src={book.image}></img>
+          <h3>{book.title}</h3>
           <p className="author">Franz Kafka</p>
-          <h3>XX Price</h3>
-          <button>See details</button>
-        </div>
-        <div className="list-book">
-          <img src="https://m.media-amazon.com/images/I/71Le9HD+HuL.jpg"></img>
-          <h3>Letters to Milena</h3>
+          <h3>{book.price}</h3>
+          <Link to={`/bookdetails`}>
+            <button onClick={() => { setSelectedBook(book) }}>See details</button>
+          </Link>
+        </div>)}
+      </div>
+      <h1>Books</h1>
+      <div className="titles">
+        {allBooks.map(book => <div className="list-book">
+          <img src={book.image}></img>
+          <h3>{book.title}</h3>
           <p className="author">Franz Kafka</p>
-          <h3>XX Price</h3>
-          <button>See details</button>
-        </div>
-        <div className="list-book">
-          <img src="https://m.media-amazon.com/images/I/71Le9HD+HuL.jpg"></img>
-          <h3>Letters to Milena</h3>
-          <p className="author">Franz Kafka</p>
-          <h3>XX Price</h3>
-          <button>See details</button>
-        </div>
-        <div className="list-book">
-          <img src="https://m.media-amazon.com/images/I/71Le9HD+HuL.jpg"></img>
-          <h3>Letters to Milena</h3>
-          <p className="author">Franz Kafka</p>
-          <h3>XX Price</h3>
-          <button>See details</button>
-        </div>
-        <div className="list-book">
-          <img src="https://m.media-amazon.com/images/I/71Le9HD+HuL.jpg"></img>
-          <h3>Letters to Milena</h3>
-          <p className="author">Franz Kafka</p>
-          <h3>XX Price</h3>
-          <button>See details</button>
-        </div>
-        <div className="list-book">
-          <img src="https://m.media-amazon.com/images/I/71Le9HD+HuL.jpg"></img>
-          <h3>Letters to Milena</h3>
-          <p className="author">Franz Kafka</p>
-          <h3>XX Price</h3>
-          <button>See details</button>
-        </div>
+          <h3>{book.price}</h3>
+          <Link to={`/bookdetails`}>
+            <button onClick={() => { setSelectedBook(book) }}>See details</button>
+          </Link>
+        </div>)}
       </div>
     </div>
   );

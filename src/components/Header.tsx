@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 
-export function Header() {
+export function Header({ currentUser, setCurrentUser }: any) {
+  const navigate=useNavigate()
   return (
     <header>
       <Link to="/home">
@@ -9,10 +10,16 @@ export function Header() {
       </Link>
       <div>
       </div>
-      <div className="my-account">
-        <p>My account</p>
+      {!currentUser ? <Link to="/login">Log In</Link> : <div className="my-account">
+        <p>{currentUser.fullname}</p>
         <span className="material-symbols-outlined">account_circle</span>
-      </div>
+        {currentUser.role ? <Link to="/admin">Edit</Link> : null}
+        {currentUser ? <button onClick={() => {
+          setCurrentUser(null)
+          localStorage.removeItem("token")
+          navigate("/home")
+        }}>Sign Out</button> : null}
+      </div>}
     </header>
   );
 }

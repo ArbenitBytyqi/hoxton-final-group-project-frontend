@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Footer from "./components/Footer";
@@ -12,18 +13,47 @@ import { PageNotFound } from "./pages/PageNotFound";
 import { Reviews } from "./pages/Reviews";
 
 function App() {
+  const [allBooks, setAllBooks] = useState([])
+  const [selectedBook, setSelectedBook] = useState({})
+  const [currentUser, setCurrentUser] = useState(null)
+  const [selectedAuthor, setSelectedAuthor] = useState(null)
+
+  useEffect(() => {
+    fetch(`http://localhost:6677/books`)
+      .then(resp => resp.json())
+      .then(data => setAllBooks(data))
+
+    if (localStorage.token) {
+      fetch('http://localhost:6677/validate', {
+        headers: {
+          Authorization: localStorage.token
+        }
+      })
+        .then(resp => resp.json())
+        .then(data => {
+          if (data.error) {
+            alert(data.error)
+          } else {
+            setCurrentUser(data.user)
+            console.log(data.user)
+          }
+        })
+    }
+  }, [])
+
+
   return (
     <div className="App">
-      <Header />
+      <Header currentUser={currentUser} setCurrentUser={setCurrentUser} />
       <main>
         <Routes>
           <Route index element={<Navigate to="/home" />} />
-          <Route path="/home" element={<Homepage />} />
-          <Route path="/admin" element={<Admin/>} />
-          <Route path="/bookdetails" element={<BookDetails />} />
-          <Route path="/reviews" element={<Reviews />} />
-          <Route path="/author/:itemId" element={<Author />} />
-          <Route path="/login" element={<LogIn />} />
+          <Route path="/home" element={<Homepage allBooks={allBooks} setSelectedBook={setSelectedBook} />} />
+          <Route path="/admin" element={<Admin setAllBooks={setAllBooks} />} />
+          <Route path="/bookdetails" element={<BookDetails selectedBook={selectedBook} setSelectedAuthor={setSelectedAuthor} />} />
+          <Route path="/reviews" element={<Reviews selectedBook={selectedBook} />} />
+          <Route path="/author" element={<Author selectedAuthor={selectedAuthor} />} />
+          <Route path="/login" element={<LogIn setCurrentUser={setCurrentUser} />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
