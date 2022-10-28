@@ -1,7 +1,9 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 export function Homepage({ allBooks, setSelectedBook }: any) {
 
+  const [searchBooks, setSearchBooks] = useState('')
   const topRated: any = []
 
   for (let book of allBooks) {
@@ -13,7 +15,9 @@ export function Homepage({ allBooks, setSelectedBook }: any) {
     }
   }
 
+  const filteredBooks = allBooks.filter(filteredAllBooks => filteredAllBooks.title.toLowerCase().includes(searchBooks.toLowerCase()))
   console.log(`topRated`, topRated)
+  console.log("searchBooks", filteredBooks)
   return (
     //hardcoded until fetched from the server
     <div className="home">
@@ -22,9 +26,10 @@ export function Homepage({ allBooks, setSelectedBook }: any) {
           type="text"
           name="search"
           placeholder="Search here..."
-        // onChange={event => {
-        //   setSearchBook(event.target.value)
-        // }}
+          onChange={event => {
+            setSearchBooks(event.target.value)
+            console.log("event", setSearchBooks)
+          }}
         />
 
         <button>🔎</button>
@@ -43,7 +48,7 @@ export function Homepage({ allBooks, setSelectedBook }: any) {
       </div>
       <h1>Books</h1>
       <div className="titles">
-        {allBooks.map(book => <div className="list-book">
+        {filteredBooks.map(book => <div className="list-book">
           <img src={book.image}></img>
           <h3>{book.title}</h3>
           <p className="author">Franz Kafka</p>
