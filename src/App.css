@@ -451,15 +451,3 @@ textarea {
 .search-title-input button {
   background-color: transparent;
 }
-
-/* <div className="search-title-input">
-        <input
-          type="text"
-          name="search"
-          placeholder="Search here..."
-          onChange={event => {
-            setSearchBook(event.target.value)
-          }} />
-
-        <button>🔎</button>
-      </div> */

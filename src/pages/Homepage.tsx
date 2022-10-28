@@ -17,7 +17,18 @@ export function Homepage({ allBooks, setSelectedBook }: any) {
   return (
     //hardcoded until fetched from the server
     <div className="home">
-      <input placeholder="Search"></input>
+      <div className="search-title-input">
+        <input
+          type="text"
+          name="search"
+          placeholder="Search here..."
+        // onChange={event => {
+        //   setSearchBook(event.target.value)
+        // }}
+        />
+
+        <button>🔎</button>
+      </div>
       <h1>Top Rated</h1>
       <div className="titles">
         {topRated.map(book => <div className="list-book">
