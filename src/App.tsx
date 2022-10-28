@@ -13,34 +13,33 @@ import { PageNotFound } from "./pages/PageNotFound";
 import { Reviews } from "./pages/Reviews";
 
 function App() {
-  const [allBooks, setAllBooks] = useState([])
-  const [selectedBook, setSelectedBook] = useState({})
-  const [currentUser, setCurrentUser] = useState(null)
-  const [selectedAuthor, setSelectedAuthor] = useState(null)
+  const [allBooks, setAllBooks] = useState([]);
+  const [selectedBook, setSelectedBook] = useState({});
+  const [currentUser, setCurrentUser] = useState(null);
+  const [selectedAuthor, setSelectedAuthor] = useState(null);
 
   useEffect(() => {
     fetch(`http://localhost:6677/books`)
-      .then(resp => resp.json())
-      .then(data => setAllBooks(data))
+      .then((resp) => resp.json())
+      .then((data) => setAllBooks(data));
 
     if (localStorage.token) {
-      fetch('http://localhost:6677/validate', {
+      fetch("http://localhost:6677/validate", {
         headers: {
-          Authorization: localStorage.token
-        }
+          Authorization: localStorage.token,
+        },
       })
-        .then(resp => resp.json())
-        .then(data => {
+        .then((resp) => resp.json())
+        .then((data) => {
           if (data.error) {
-            alert(data.error)
+            alert(data.error);
           } else {
-            setCurrentUser(data.user)
-            console.log(data.user)
+            setCurrentUser(data.user);
+            console.log(data.user);
           }
-        })
+        });
     }
-  }, [])
-
+  }, []);
 
   return (
     <div className="App">
@@ -48,12 +47,41 @@ function App() {
       <main>
         <Routes>
           <Route index element={<Navigate to="/home" />} />
-          <Route path="/home" element={<Homepage allBooks={allBooks} setSelectedBook={setSelectedBook} />} />
+          <Route
+            path="/home"
+            element={
+              <Homepage allBooks={allBooks} setSelectedBook={setSelectedBook} />
+            }
+          />
           <Route path="/admin" element={<Admin setAllBooks={setAllBooks} />} />
-          <Route path="/bookdetails" element={<BookDetails selectedBook={selectedBook} setSelectedAuthor={setSelectedAuthor} />} />
-          <Route path="/reviews" element={<Reviews selectedBook={selectedBook} />} />
-          <Route path="/author" element={<Author selectedAuthor={selectedAuthor} />} />
-          <Route path="/login" element={<LogIn setCurrentUser={setCurrentUser} />} />
+          <Route
+            path="/bookdetails"
+            element={
+              <BookDetails
+                selectedBook={selectedBook}
+                setSelectedAuthor={setSelectedAuthor}
+              />
+            }
+          />
+          <Route
+            path="/reviews"
+            element={
+              <Reviews
+                selectedBook={selectedBook}
+                setAllBooks={setAllBooks}
+                setSelectedBook={setSelectedBook}
+                currentUser={currentUser}
+              />
+            }
+          />
+          <Route
+            path="/author"
+            element={<Author selectedAuthor={selectedAuthor} />}
+          />
+          <Route
+            path="/login"
+            element={<LogIn setCurrentUser={setCurrentUser} />}
+          />
           <Route path="/cart" element={<Cart />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
