@@ -377,13 +377,6 @@ textarea {
   object-fit: cover;
 }
 
-.book-description {
-  display: grid;
-  grid-auto-flow: column;
-  gap: 20px;
-  text-align: left;
-  max-width: 400px;
-}
 
 .book-details {
   width: 300px;
