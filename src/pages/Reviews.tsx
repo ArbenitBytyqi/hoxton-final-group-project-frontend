@@ -23,15 +23,6 @@ export function Reviews({
           className="leave-review"
           onSubmit={(event) => {
             event.preventDefault();
-            // const stars = [
-            //   ...document.querySelectorAll('input[name="star"]:checked'),
-            // ];
-
-            // let rating = {
-            //   stars: stars.length,
-            //   review: event.target.review.value,
-            // };
-            console.log(stars.length);
             let newReview = {
               stars: 2,
               comment: event.target.comment.value,
@@ -109,7 +100,7 @@ export function Reviews({
             <div className="col">
               <div className="review">
                 <img src={review.user?.image} alt="Person 1" />
-                <div className="name">{review.user.fullname}</div>
+                <div className="name">{review.user?.fullname}</div>
                 <div className="stars">
                   <AiFillStar />
                   <AiFillStar />

@@ -8,9 +8,9 @@ export function Homepage({ allBooks, setSelectedBook }: any) {
   for (let book of allBooks) {
     let sum = 0;
     for (const review of book.reviews) {
-      if (review.stars > 4.5) sum += review.stars;
+      if (review.stars > 3) sum += review.stars;
       let average = sum / book.reviews.length;
-      if (average > 3) topRated.push(book);
+      if (average > 4) topRated.push(book);
     }
   }
 
