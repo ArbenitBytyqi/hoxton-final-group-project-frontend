@@ -78,10 +78,10 @@ header {
   font-size: 18px;
 }
 
-.logo{
-width: 170px;
-height: 55px;
-object-fit: cover;
+.logo {
+  width: 170px;
+  height: 55px;
+  object-fit: cover;
 }
 
 header p {
@@ -136,14 +136,10 @@ main {
   gap: 50px;
 }
 
-.home input {
-  width: 50%;
-  height: 60px;
-  border-radius: 25px;
-}
+
 
 .titles {
-  width: 95vw;
+  width: 98vw;
   display: grid;
   grid-template-columns: repeat(4, 300px);
   justify-items: center;
@@ -152,11 +148,13 @@ main {
 
 .list-book {
   display: grid;
-  width: 250px;
+  margin-left: 21px;
+  width: 255px;
   padding: var(--usualPadding);
   gap: 10px;
   justify-content: center;
-  border: 1px solid rgb(207, 207, 207);
+  border: 2px solid rgb(207, 207, 207);
+  border-radius: 10px;
 }
 
 .list-book img {
@@ -262,6 +260,7 @@ main {
   justify-content: center;
   gap: 200px;
 }
+
 .post-book {
   margin-top: 20px;
   width: 450px;
@@ -275,12 +274,13 @@ main {
   overflow-x: hidden;
 
 }
+
 .admin-page label {
   display: grid;
   gap: 2px;
 }
 
- textarea {
+textarea {
   width: 100%;
   height: 150px;
   padding: 12px 12px;
@@ -305,7 +305,7 @@ main {
 }
 
 
-.post-author{
+.post-author {
   margin-top: 20px;
   width: 450px;
   padding: 20px;
@@ -321,63 +321,63 @@ main {
 /* review page */
 
 
-.reviews{
+.reviews {
   padding: 40px 0;
   color: #434343;
   text-align: center;
-  display: grid; 
+  display: grid;
   grid-auto-flow: column;
   justify-content: center;
   gap: 30px;
 }
 
-.inner{
+.inner {
   display: grid;
   overflow-y: scroll;
   height: 420px;
-  width:fit-content;
+  width: fit-content;
   padding: 15px;
   background-color: var(--theGreyColor);
   border-bottom: 2px solid rgb(146, 146, 146);
 }
 
 
-.review{
+.review {
   background: #fff;
   padding: 10px;
 }
 
-.col{
+.col {
   width: 500px;
   display: grid;
   gap: 10px;
 }
 
-.review img{
+.review img {
   width: 50px;
   height: 50px;
   object-fit: cover;
   border-radius: 50%;
 }
 
-.name{
+.name {
   font-size: 20px;
   text-transform: uppercase;
   margin: 20px 0;
 }
 
-.stars{
+.stars {
   color: #c34c4c;
   margin-bottom: 20px;
 }
 
-.book-image_review{
+.book-image_review {
   width: 120px;
   height: 170px;
   object-fit: cover;
 }
 
-.book-description{
+.book-description {
   display: grid;
   grid-auto-flow: column;
   gap: 20px;
@@ -385,38 +385,38 @@ main {
   max-width: 400px;
 }
 
-.book-details{
+.book-details {
   width: 300px;
   display: grid;
   justify-content: left;
   align-content: center;
 }
 
-.book-part_review{
+.book-part_review {
   display: grid;
   justify-content: center;
   grid-auto-flow: row;
 }
 
-.leave-review{
-padding-top: 30px;
-width: 300px;
-display: grid;
-align-content: flex-start;
-gap: 20px;
+.leave-review {
+  padding-top: 30px;
+  width: 300px;
+  display: grid;
+  align-content: flex-start;
+  gap: 20px;
 }
 
-.leave-review textarea{
+.leave-review textarea {
 
   height: 100px;
   padding: 15px;
   background-color: white;
   border: 1px solid black;
   font-size: 12px;
-  outline-color:rgb(104, 104, 104);
+  outline-color: rgb(104, 104, 104);
 }
 
-.stars-review{
+.stars-review {
   color: var(--mainColor);
   font-size: 17px;
   text-align: center;
@@ -426,10 +426,47 @@ gap: 20px;
   gap: 5px;
 }
 
-.stars-review input{
+.stars-review input {
   display: none;
 }
 
-.stars-review input[type="checkbox"]:checked + span{
-color: green;
+.stars-review input[type="checkbox"]:checked+span {
+  color: green;
 }
+
+.search-title-input {
+  width: 50%;
+  height: 70px;
+  border: solid var(--mainColor) 3px;
+  border-radius: 50px;
+
+}
+
+.search-title-input input {
+  width: 90%;
+  height: 70px;
+  background-color: transparent;
+  border-radius: 30px;
+  bottom: 5px;
+}
+
+.search-title-input input:focus {
+  outline: none;
+}
+
+
+.search-title-input button {
+  background-color: transparent;
+}
+
+/* <div className="search-title-input">
+        <input
+          type="text"
+          name="search"
+          placeholder="Search here..."
+          onChange={event => {
+            setSearchBook(event.target.value)
+          }} />
+
+        <button>🔎</button>
+      </div> */
