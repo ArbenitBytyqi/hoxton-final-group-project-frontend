@@ -4,6 +4,7 @@ import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 export function Reviews({ selectedBook }: any) {
   return (
     <div className="reviews">
+      <div>
       <div className="book-description">
         <img
           className="book-image_review"
@@ -12,8 +13,9 @@ export function Reviews({ selectedBook }: any) {
         <div className="book-details">
           <h4>{selectedBook.title}</h4>
           {selectedBook.authors.map(author => <h4>{author.fullname}</h4>)}
-
-        </div>
+          </div>
+        
+        
       </div>
       <form
         className="leave-review"
@@ -68,6 +70,8 @@ export function Reviews({ selectedBook }: any) {
         <textarea placeholder="leave a review" name="review"></textarea>
         <button>submit</button>
       </form>
+      </div>
+     
         <div className="inner">
           <h1>Reviews:</h1>
           <div className="border"></div>

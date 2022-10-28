@@ -377,6 +377,12 @@ textarea {
   object-fit: cover;
 }
 
+.book-description{
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: left;
+  gap: 20px;
+}
 
 .book-details {
   width: 300px;
